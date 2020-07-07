@@ -1,5 +1,5 @@
 package by.epamtc.mtv.viaryshko.task04;
-import java.util.Arrays;
+
 //Дан линейный массив . Получить действительную квадратную матрицу порядка n:
 
 public class Task04 {
@@ -15,8 +15,9 @@ public class Task04 {
         if (isValidSize()) {
             arrayForFirstLine = new double[size];
             array = new double[size][size];
-            System.out.println(Arrays.toString(fillArrayForFirstLine()));
+            fillArrayForFirstLine();
             fillArray();
+            printArray(array);
         } else {
             System.out.println("Введите корректный размер");
         }
@@ -43,7 +44,15 @@ public class Task04 {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 array[i][j] = Math.pow(arrayForFirstLine[j], i + 1);
-                System.out.print(array[i][j] + "\t");
+            }
+        }
+    }
+
+    public static void printArray(double[][] arrayForPrint){
+
+        for (int i = 0; i < arrayForPrint.length; i++) {
+            for (int j = 0; j < arrayForPrint[0].length; j++) {
+                System.out.print(arrayForPrint[i][j] + "\t");
 
             }
             System.out.println();

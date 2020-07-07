@@ -1,4 +1,5 @@
 package by.epamtc.mtv.viaryshko.task05;
+import by.epamtc.mtv.viaryshko.task04.Task04;
 
 //Найдите произведение двух матриц.
 public class Task05 {
@@ -15,7 +16,7 @@ public class Task05 {
             System.out.println("Умножение невозможно");
         } else {
             multiplyByMatrix();
-            getResult();
+            Task04.printArray(arrayResult);
         }
     }
 
@@ -30,17 +31,5 @@ public class Task05 {
                 }
             }
         }
-    }
-
-    //результат
-    private void getResult() {
-
-        for (double[] result : arrayResult) {
-            for (int j = 0; j < arrayResult[0].length; j++) {
-                System.out.print(result[j] + "\t");
-            }
-            System.out.println();
-        }
-
     }
 }

@@ -13,6 +13,7 @@ public class Task03 {
         if (isEvenSize()) {
             array = new int[size][size];
             fillArray();
+            printArray(array);
         } else {
             System.out.println("Введите корректный размер");
         }
@@ -33,7 +34,14 @@ public class Task03 {
                 } else {
                     array[i][j] = 1;
                 }
-                System.out.print(array[i][j] + "\t");
+            }
+        }
+    }
+
+    public static void printArray(int[][] arrayForPrint) {
+        for (int i = 0; i < arrayForPrint.length; i++) {
+            for (int j = 0; j < arrayForPrint[0].length; j++) {
+                System.out.print(arrayForPrint[i][j] + "\t");
             }
             System.out.println();
         }

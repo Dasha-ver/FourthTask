@@ -1,4 +1,5 @@
 package by.epamtc.mtv.viaryshko.task06;
+import by.epamtc.mtv.viaryshko.task03.Task03;
 
 //Магическим квадратом порядка n называется квадратная матрица размера nxn, составленная из чисел 1, 2, 3, ...,
 // так, что суммы по каждому столбцу, каждой строке и каждой из двух больших диагоналей равны между собой.
@@ -20,18 +21,8 @@ public class Task06 {
         }
     }
 
-    //печать массива
-    public void printArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                System.out.print(array[i][j] + "\t");
-            }
-            System.out.println();
-        }
-    }
-
     //магический квадрат для 8
-    public void getMagicSquareForEight() {
+    public void receiveMagicSquareForEight() {
         fillArray(8);
         int counter = 0;
         for (int i = 0; i < array.length / 2; i++) {
@@ -71,14 +62,14 @@ public class Task06 {
             array[array.length - counter][array.length / 2 - counter] = transition;
 
         }
-        printArray(array);
+        Task03.printArray(array);
     }
 
     //магический квадрат для 5
-    public void getMagicSquareForFive() {
+    public void receiveMagicSquareForFive() {
         fillArray(5);
         int[][] magicSquare = new int[5][5];
-        final int magicConst = (5 * ((5 * 5) + 1)) / 2;
+        final int MAGIC_CONST = (5 * ((5 * 5) + 1)) / 2;
         int amountFirstLine = 0;
         int amountFifthLine = 0;
         int amountFirstColumn = 0;
@@ -123,12 +114,12 @@ public class Task06 {
             amountFirstColumn += magicSquare[i][0];
             amountFifthColumn += magicSquare[i][magicSquare.length - 1];
         }
-        magicSquare[0][magicSquare.length / 2] = magicConst - amountFirstLine;
-        magicSquare[magicSquare.length - 1][magicSquare.length / 2] = magicConst - amountFifthLine;
-        magicSquare[magicSquare.length / 2][0] = magicConst - amountFirstColumn;
-        magicSquare[magicSquare.length / 2][magicSquare.length - 1] = magicConst - amountFifthColumn;
+        magicSquare[0][magicSquare.length / 2] = MAGIC_CONST - amountFirstLine;
+        magicSquare[magicSquare.length - 1][magicSquare.length / 2] = MAGIC_CONST - amountFifthLine;
+        magicSquare[magicSquare.length / 2][0] = MAGIC_CONST - amountFirstColumn;
+        magicSquare[magicSquare.length / 2][magicSquare.length - 1] = MAGIC_CONST - amountFifthColumn;
 
-        printArray(magicSquare);
+        Task03.printArray(magicSquare);
     }
 }
 

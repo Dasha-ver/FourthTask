@@ -11,6 +11,7 @@ public class Task02 {
         if (isEvenSize()) {
             array = new int[size][size];
             fillArray();
+            printArray();
         } else {
             System.out.println("Введите корректный размер");
         }
@@ -24,8 +25,11 @@ public class Task02 {
     private void fillArray() {
 
         for (int j = 0; j < array.length; j++) {
-            array[0][j] = j+1;
+            array[0][j] = j + 1;
         }
+    }
+
+    private void printArray(){
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
